@@ -2,5 +2,6 @@ import styled from "styled-components";
 
 export const PlayerContainer = styled.div`
   position: relative;
-  width: 90%;
+  width: 100%;
+  z-index: 999;
 `;

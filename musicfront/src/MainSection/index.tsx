@@ -8,8 +8,8 @@ import {
   SearchInput,
   MainContainer,
   ResultsElements,
-  NavContainer,
 } from "./MainElements";
+import NavBar from "../Navbar";
 import SpotifyWebApi from "spotify-web-api-node";
 import * as dotenv from "dotenv";
 dotenv.config();
@@ -98,7 +98,7 @@ export default function MainSection({ code }: { code: string }) {
         ) : (
           <div></div>
         )}
-        <NavContainer />
+        <NavBar />
       </MainContainer>
     </>
   );

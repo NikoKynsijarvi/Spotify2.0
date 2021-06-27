@@ -42,11 +42,3 @@ export const ResultsElements = styled.div`
   flex-direction: column;
   row-gap: 1em;
 `;
-
-export const NavContainer = styled.div`
-  height: 100vh;
-  position: absolute;
-  left: 0;
-  width: 50px;
-  background-color: #ff6208;
-`;

@@ -33,7 +33,7 @@ export default function MusicPlayer({
           bgColor: "#ffffff",
           color: "#000000",
           loaderColor: "#fff",
-          sliderColor: " #ff6208",
+          sliderColor: " #00d6fc",
           trackArtistColor: "#000000",
           trackNameColor: "#000000",
         }}

@@ -4,6 +4,7 @@ export const MainContainer = styled.div`
   height: 99vh;
   width: 100vw;
   display: flex;
+
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -41,4 +42,23 @@ export const ResultsElements = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 1em;
+`;
+
+export const LogOutContainer = styled.div`
+  background-color: #ff6208;
+  height: 50px;
+  width: 150px;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 5%;
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #fff;
+  @media (max-width: 820px) {
+    position: relative;
+  }
 `;

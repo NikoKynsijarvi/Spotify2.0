@@ -25,6 +25,9 @@ export const NavIcon = styled.div<NavProps>`
   transform: ${({ open }) => (open ? "rotate(90deg)" : "rotate(0deg)")};
   transform-origin: left top;
   position: absolute;
+  :hover {
+    filter: brightness(0.8);
+  }
 `;
 
 export const NavItems = styled.div<NavProps>`
@@ -34,4 +37,11 @@ export const NavItems = styled.div<NavProps>`
   justify-content: center;
   align-items: center;
   opacity: ${({ open }) => (open ? "1.0" : "0")};
+`;
+
+export const Icon = styled.div`
+  transition: 0.3s ease-out;
+  :hover {
+    filter: brightness(0.8);
+  }
 `;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavContainer, NavIcon, NavItems } from "./NavBarElements";
+import { NavContainer, NavIcon, NavItems, Icon } from "./NavBarElements";
 import { FaBars, FaUserCircle } from "react-icons/fa";
 
 export default function NavBar() {
@@ -13,7 +13,9 @@ export default function NavBar() {
       </NavIcon>
       <div>
         <NavItems open={isOpen}>
-          <FaUserCircle style={styles} />
+          <Icon>
+            <FaUserCircle style={styles} />
+          </Icon>
         </NavItems>
       </div>
     </NavContainer>

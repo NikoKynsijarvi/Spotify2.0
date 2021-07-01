@@ -8,10 +8,13 @@ import {
   SearchInput,
   MainContainer,
   ResultsElements,
+  LogOutContainer,
 } from "./MainElements";
 import NavBar from "../Navbar";
 import SpotifyWebApi from "spotify-web-api-node";
+import { FiLogOut } from "react-icons/fi";
 import * as dotenv from "dotenv";
+
 dotenv.config();
 
 const spotifyWebApi = new SpotifyWebApi({
@@ -62,9 +65,15 @@ export default function MainSection({ code }: { code: string }) {
     });
   }, [search, accesToken]);
 
+  const styles = { color: "white", height: "30px", width: "30px" };
+
   return (
     <>
       <MainContainer>
+        <LogOutContainer>
+          <FiLogOut style={styles} />
+          <h3>Log out</h3>
+        </LogOutContainer>
         <SearchContainer>
           <SearchForm>
             <SearchInput
@@ -93,6 +102,7 @@ export default function MainSection({ code }: { code: string }) {
             <div></div>
           )}
         </ResultsElements>
+        )
         {accesToken ? (
           <MusicPlayer accesToken={accesToken} songUri={selectedTrack.uri} />
         ) : (

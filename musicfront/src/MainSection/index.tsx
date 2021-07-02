@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import SearchResult from "../SearchResult";
 import useAuth from "../useAuth";
 import MusicPlayer from "../MusicPlayer";
+import SongInfo from "../SongInfo";
 import {
   SearchContainer,
   SearchForm,
@@ -65,12 +66,16 @@ export default function MainSection({ code }: { code: string }) {
     });
   }, [search, accesToken]);
 
+  const logOut = () => {
+    window.location.href = "/";
+  };
+
   const styles = { color: "white", height: "30px", width: "30px" };
 
   return (
     <>
       <MainContainer>
-        <LogOutContainer>
+        <LogOutContainer onClick={logOut}>
           <FiLogOut style={styles} />
           <h3>Log out</h3>
         </LogOutContainer>
@@ -85,9 +90,9 @@ export default function MainSection({ code }: { code: string }) {
             />
           </SearchForm>
         </SearchContainer>
-        <ResultsElements>
-          {results ? (
-            results.map((r) => (
+        {search.length > 0 ? (
+          <ResultsElements>
+            {results!.map((r) => (
               <SearchResult
                 key={r.uri}
                 uri={r.uri}
@@ -97,12 +102,17 @@ export default function MainSection({ code }: { code: string }) {
                 setSelectedTrack={setSelectedTrack}
                 setSearch={setSearch}
               />
-            ))
-          ) : (
-            <div></div>
-          )}
-        </ResultsElements>
-        )
+            ))}
+          </ResultsElements>
+        ) : (
+          <SongInfo
+            uri={selectedTrack.uri}
+            artist={selectedTrack.artist}
+            albumUrl={selectedTrack.albumUrl}
+            trackTitle={selectedTrack.trackTitle}
+          />
+        )}
+
         {accesToken ? (
           <MusicPlayer accesToken={accesToken} songUri={selectedTrack.uri} />
         ) : (

@@ -42,6 +42,10 @@ export const ResultsElements = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 1em;
+
+  @media (max-width: 600px) {
+    width: 300px;
+  }
 `;
 
 export const LogOutContainer = styled.div`

@@ -1,20 +1,23 @@
 import React from "react";
+import { AlbumImg, InfoContainer, TrackName, Artist } from "./InfoElements";
 
 function SongInfo({
   artist,
   trackTitle,
-  uri,
+
   albumUrl,
 }: {
   artist: string;
   trackTitle: string;
-  uri: string;
+
   albumUrl: string;
 }) {
   return (
-    <div>
-      <h1>{trackTitle}</h1>
-    </div>
+    <InfoContainer>
+      {albumUrl.length > 0 ? <AlbumImg src={albumUrl} /> : null}
+      <TrackName>{trackTitle}</TrackName>
+      <Artist>{artist}</Artist>
+    </InfoContainer>
   );
 }
 

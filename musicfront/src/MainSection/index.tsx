@@ -106,7 +106,6 @@ export default function MainSection({ code }: { code: string }) {
           </ResultsElements>
         ) : (
           <SongInfo
-            uri={selectedTrack.uri}
             artist={selectedTrack.artist}
             albumUrl={selectedTrack.albumUrl}
             trackTitle={selectedTrack.trackTitle}
